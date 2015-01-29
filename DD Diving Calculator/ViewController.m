@@ -27,11 +27,11 @@
     self.viewBottom.layer.masksToBounds = NO;
     self.viewBottom.layer.shadowOpacity = .5;
     
-    self.txtdd.layer.shadowColor = [UIColor blueColor].CGColor;
-    self.txtdd.layer.shadowOffset = CGSizeMake(.1f, .1f);
-    self.txtdd.layer.masksToBounds = NO;
-    self.txtdd.layer.shadowOpacity = .3;
-    self.txtdd.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 0);
+//    self.txtdd.layer.shadowColor = [UIColor blueColor].CGColor;
+//    self.txtdd.layer.shadowOffset = CGSizeMake(.1f, .1f);
+//    self.txtdd.layer.masksToBounds = NO;
+//    self.txtdd.layer.shadowOpacity = .3;
+//    self.txtdd.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 0);
     
     
 }
