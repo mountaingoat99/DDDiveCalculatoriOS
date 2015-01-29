@@ -63,6 +63,7 @@
                                             <constraint firstAttribute="height" constant="30" id="7v2-Ph-ppc"/>
                                             <constraint firstAttribute="width" constant="60" id="TcJ-V5-vWe">
                                                 <variation key="widthClass=compact" constant="40"/>
+                                                <variation key="heightClass=regular-widthClass=regular" constant="60"/>
                                             </constraint>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>

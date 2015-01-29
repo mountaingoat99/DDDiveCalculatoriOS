@@ -28,7 +28,7 @@
 @property (nonatomic) double score6;
 @property (nonatomic) double score7;
 
--(NSString*)CalcScores;
+-(NSNumber*)CalcScores;
 -(void)UpdateTxtField:(NSString*)digit;
 -(NSString*)CheckRegEx:(NSString*)enteredNumber textNumber:(NSString*)textNumber;
 -(NSString*)DeleteText:(NSString*)textfield;
@@ -258,7 +258,7 @@
     
     if (self.txtdd.text.length > 0) {
         
-        self.lblTotal.text = [self CalcScores];
+        self.lblTotal.text = [[self CalcScores] stringValue];
         
     } else {
         UIAlertView *error = [[UIAlertView alloc] initWithTitle:@"Hold On!"
@@ -447,7 +447,7 @@
 
 #pragma private methods
 
--(NSString*)CalcScores {
+-(NSNumber*)CalcScores {
     
     // create a mutable array
     NSMutableArray *scores = [[NSMutableArray alloc] init];
@@ -500,9 +500,27 @@
             
         } else if (sortedScores.count == 3) {
             
+            self.score1 = [[sortedScores objectAtIndex:0] doubleValue];
+            self.score2 = [[sortedScores objectAtIndex:1] doubleValue];
+            self.score3 = [[sortedScores objectAtIndex:2] doubleValue];
+            
+            finalScore = (self.score1 + self.score2 + self.score3) * self.dd;
+            
         } else if (sortedScores.count == 5) {
             
+            self.score1 = [[sortedScores objectAtIndex:1] doubleValue];
+            self.score2 = [[sortedScores objectAtIndex:2] doubleValue];
+            self.score3 = [[sortedScores objectAtIndex:3] doubleValue];
+            
+            finalScore = (self.score1 + self.score2 + self.score3) * self.dd;
+            
         } else if (sortedScores.count == 7) {
+            
+            self.score1 = [[sortedScores objectAtIndex:2] doubleValue];
+            self.score2 = [[sortedScores objectAtIndex:3] doubleValue];
+            self.score3 = [[sortedScores objectAtIndex:4] doubleValue];
+            
+            finalScore = (self.score1 + self.score2 + self.score3) * self.dd;
             
         } else {
             UIAlertView *error = [[UIAlertView alloc] initWithTitle:@"Hold On!"
@@ -526,9 +544,13 @@
 
     }
     
-    NSString *returnString = [[NSString alloc] initWithFormat:@"%f", finalScore];
+    NSNumber *theNumber = [NSNumber numberWithDouble:finalScore];
     
-    return returnString;
+    //NSString *returnString = [[NSString alloc] initWithFormat:@"%f", finalScore];
+    
+    //return returnString;
+    
+    return theNumber;
 }
 
 -(NSString*)DeleteText:(NSString*)textfield {
