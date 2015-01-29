@@ -21,8 +21,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LOx-x5-597">
                                 <rect key="frame" x="16" y="63" width="568" height="60"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zsp-eq-AyS">
-                                        <rect key="frame" x="139" y="15" width="294" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="zsp-eq-AyS">
+                                        <rect key="frame" x="139" y="15" width="254" height="30"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="qPr-2y-WyG"/>
@@ -36,26 +36,20 @@
                                                 <exclude reference="y1u-ah-Y5U"/>
                                             </mask>
                                         </variation>
+                                        <variation key="widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         </variation>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Degree of Difficulty" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="V4i-kD-4SB">
                                         <rect key="frame" x="8" y="21" width="123" height="17"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
-                                        <variation key="heightClass=regular-widthClass=regular">
-                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        </variation>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7gL-lr-4Xd">
-                                        <rect key="frame" x="457" y="21" width="35" height="17"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="widthClass=compact" ambiguous="YES">
-                                            <rect key="frame" x="238" y="-135" width="42" height="21"/>
+                                        <variation key="widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -65,18 +59,39 @@
                                         <rect key="frame" x="500" y="15" width="60" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="7v2-Ph-ppc"/>
-                                            <constraint firstAttribute="width" constant="60" id="TcJ-V5-vWe"/>
+                                            <constraint firstAttribute="width" constant="60" id="TcJ-V5-vWe">
+                                                <variation key="widthClass=compact" constant="40"/>
+                                            </constraint>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        </variation>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7gL-lr-4Xd">
+                                        <rect key="frame" x="417" y="21" width="35" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         </variation>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.63921568627450975" green="0.83137254901960789" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="7gL-lr-4Xd" firstAttribute="centerY" secondItem="V4i-kD-4SB" secondAttribute="centerY" id="1MS-xV-QBU"/>
+                                    <constraint firstItem="7gL-lr-4Xd" firstAttribute="centerY" secondItem="zsp-eq-AyS" secondAttribute="centerY" id="3TM-UP-bXf"/>
+                                    <constraint firstItem="7gL-lr-4Xd" firstAttribute="centerY" secondItem="kUG-CT-zOO" secondAttribute="centerY" id="7RW-DI-OP7"/>
+                                    <constraint firstItem="V4i-kD-4SB" firstAttribute="width" secondItem="7gL-lr-4Xd" secondAttribute="width" id="AUV-iW-DFR"/>
                                     <constraint firstAttribute="centerY" secondItem="V4i-kD-4SB" secondAttribute="centerY" id="FAK-3x-zco"/>
                                     <constraint firstAttribute="centerY" secondItem="kUG-CT-zOO" secondAttribute="centerY" id="Gwe-PN-on2"/>
                                     <constraint firstAttribute="height" constant="60" id="OkH-ww-qbm"/>
@@ -85,10 +100,46 @@
                                     <constraint firstAttribute="centerY" secondItem="7gL-lr-4Xd" secondAttribute="centerY" id="bEG-xW-4Wg"/>
                                     <constraint firstItem="zsp-eq-AyS" firstAttribute="leading" secondItem="V4i-kD-4SB" secondAttribute="trailing" constant="8" id="csI-qV-ax7"/>
                                     <constraint firstItem="7gL-lr-4Xd" firstAttribute="leading" secondItem="zsp-eq-AyS" secondAttribute="trailing" constant="24" id="fBD-N3-lF6"/>
-                                    <constraint firstItem="kUG-CT-zOO" firstAttribute="leading" secondItem="7gL-lr-4Xd" secondAttribute="trailing" constant="8" id="gVu-0W-H4x"/>
+                                    <constraint firstItem="kUG-CT-zOO" firstAttribute="leading" secondItem="7gL-lr-4Xd" secondAttribute="trailing" constant="48" id="gVu-0W-H4x">
+                                        <variation key="widthClass=compact" constant="8"/>
+                                    </constraint>
+                                    <constraint firstItem="zsp-eq-AyS" firstAttribute="top" secondItem="LOx-x5-597" secondAttribute="top" constant="16" id="gjm-nm-DRa"/>
                                     <constraint firstAttribute="centerY" secondItem="zsp-eq-AyS" secondAttribute="centerY" id="m98-vO-1cc"/>
                                     <constraint firstItem="V4i-kD-4SB" firstAttribute="height" secondItem="7gL-lr-4Xd" secondAttribute="height" id="o9F-vo-Tz7"/>
+                                    <constraint firstAttribute="bottom" secondItem="V4i-kD-4SB" secondAttribute="bottom" constant="8" id="q1g-g9-M9z"/>
+                                    <constraint firstAttribute="bottom" secondItem="zsp-eq-AyS" secondAttribute="bottom" constant="16" id="wEU-zQ-TeF"/>
+                                    <constraint firstItem="V4i-kD-4SB" firstAttribute="top" secondItem="LOx-x5-597" secondAttribute="top" constant="8" id="yzR-uv-z26"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="AUV-iW-DFR"/>
+                                        <exclude reference="q1g-g9-M9z"/>
+                                        <exclude reference="yzR-uv-z26"/>
+                                        <exclude reference="gjm-nm-DRa"/>
+                                        <exclude reference="wEU-zQ-TeF"/>
+                                        <exclude reference="1MS-xV-QBU"/>
+                                        <exclude reference="3TM-UP-bXf"/>
+                                        <exclude reference="7RW-DI-OP7"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="OkH-ww-qbm"/>
+                                        <exclude reference="AUV-iW-DFR"/>
+                                        <exclude reference="FAK-3x-zco"/>
+                                        <exclude reference="o9F-vo-Tz7"/>
+                                        <exclude reference="q1g-g9-M9z"/>
+                                        <exclude reference="yzR-uv-z26"/>
+                                        <include reference="gjm-nm-DRa"/>
+                                        <exclude reference="m98-vO-1cc"/>
+                                        <include reference="wEU-zQ-TeF"/>
+                                        <include reference="1MS-xV-QBU"/>
+                                        <include reference="3TM-UP-bXf"/>
+                                        <include reference="7RW-DI-OP7"/>
+                                        <exclude reference="bEG-xW-4Wg"/>
+                                        <exclude reference="Gwe-PN-on2"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DD Dive Calculator" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3g-YN-yOZ">
                                 <rect key="frame" x="16" y="28" width="568" height="27"/>
@@ -108,13 +159,16 @@
                                             <constraint firstAttribute="width" constant="60" id="LsM-N0-ckN"/>
                                             <constraint firstAttribute="height" constant="30" id="MdV-yh-jWp"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="LsM-N0-ckN"/>
                                             </mask>
+                                        </variation>
+                                        <variation key="widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -126,13 +180,16 @@
                                             <constraint firstAttribute="width" constant="60" id="DoU-ej-FVR"/>
                                             <constraint firstAttribute="height" constant="30" id="QHv-7I-2gu"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="DoU-ej-FVR"/>
                                             </mask>
+                                        </variation>
+                                        <variation key="widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -144,13 +201,16 @@
                                             <constraint firstAttribute="height" constant="30" id="37X-Ky-qVn"/>
                                             <constraint firstAttribute="width" constant="60" id="4gZ-uS-hmD"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="4gZ-uS-hmD"/>
                                             </mask>
+                                        </variation>
+                                        <variation key="widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -162,13 +222,16 @@
                                             <constraint firstAttribute="width" constant="60" id="r50-r3-tzp"/>
                                             <constraint firstAttribute="height" constant="30" id="vQM-eI-x2o"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="r50-r3-tzp"/>
                                             </mask>
+                                        </variation>
+                                        <variation key="widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -180,7 +243,7 @@
                                             <constraint firstAttribute="width" constant="60" id="2Mf-vO-grE"/>
                                             <constraint firstAttribute="height" constant="30" id="7pP-Ua-W8P"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
@@ -188,11 +251,14 @@
                                                 <exclude reference="2Mf-vO-grE"/>
                                             </mask>
                                         </variation>
+                                        <variation key="widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         </variation>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O1g-bm-SW4">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="O1g-bm-SW4">
                                         <rect key="frame" x="257" y="53" width="116" height="30"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -207,11 +273,14 @@
                                                 <exclude reference="Igv-SJ-BuJ"/>
                                             </mask>
                                         </variation>
+                                        <variation key="widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         </variation>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x22-qF-p6b">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="x22-qF-p6b">
                                         <rect key="frame" x="70" y="8" width="117" height="30"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -226,11 +295,14 @@
                                                 <exclude reference="djF-Er-2iy"/>
                                             </mask>
                                         </variation>
+                                        <variation key="widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         </variation>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OQ6-LN-WMa">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="OQ6-LN-WMa">
                                         <rect key="frame" x="257" y="8" width="116" height="30"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -245,11 +317,14 @@
                                                 <exclude reference="6VN-WO-3bn"/>
                                             </mask>
                                         </variation>
+                                        <variation key="widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         </variation>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4R0-7x-Z0i">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="4R0-7x-Z0i">
                                         <rect key="frame" x="70" y="53" width="117" height="30"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -264,6 +339,9 @@
                                                 <exclude reference="g3h-zy-m0b"/>
                                             </mask>
                                         </variation>
+                                        <variation key="widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         </variation>
@@ -274,7 +352,7 @@
                                             <constraint firstAttribute="height" constant="30" id="Bfw-aZ-u48"/>
                                             <constraint firstAttribute="width" constant="60" id="deL-fa-h6f"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
@@ -282,11 +360,14 @@
                                                 <exclude reference="deL-fa-h6f"/>
                                             </mask>
                                         </variation>
+                                        <variation key="widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         </variation>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8kH-9w-B9I">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="8kH-9w-B9I">
                                         <rect key="frame" x="443" y="8" width="117" height="30"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -301,11 +382,14 @@
                                                 <exclude reference="JRM-Yj-fun"/>
                                             </mask>
                                         </variation>
+                                        <variation key="widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         </variation>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VcB-aC-Pxa">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="VcB-aC-Pxa">
                                         <rect key="frame" x="443" y="53" width="117" height="30"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -320,6 +404,9 @@
                                                 <exclude reference="b5d-ib-J49"/>
                                             </mask>
                                         </variation>
+                                        <variation key="widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         </variation>
@@ -330,13 +417,16 @@
                                             <constraint firstAttribute="height" constant="30" id="BQy-3c-4jl"/>
                                             <constraint firstAttribute="width" constant="60" id="eYp-IF-b5U"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="eYp-IF-b5U"/>
                                             </mask>
+                                        </variation>
+                                        <variation key="widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -345,11 +435,14 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GJi-PY-yPX">
                                         <rect key="frame" x="428" y="152" width="132" height="140"/>
                                         <color key="backgroundColor" red="0.0" green="0.51372549019607838" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="Clear">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <variation key="widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
                                             <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                         </variation>
@@ -360,11 +453,14 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWy-6F-VGi">
                                         <rect key="frame" x="428" y="300" width="132" height="139"/>
                                         <color key="backgroundColor" red="0.11372549019607843" green="0.49803921568627452" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="Total">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <variation key="widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
                                             <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                         </variation>
@@ -375,112 +471,148 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9l-n4-u6w">
                                         <rect key="frame" x="8" y="152" width="132" height="66"/>
                                         <color key="backgroundColor" red="0.11372549019607843" green="0.49803921568627452" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="1">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <variation key="widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        </variation>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QcR-bp-p0j">
                                         <rect key="frame" x="148" y="152" width="132" height="66"/>
                                         <color key="backgroundColor" red="0.11372549019607843" green="0.49803921568627452" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="2">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <variation key="widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        </variation>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GjX-ao-wWn">
                                         <rect key="frame" x="288" y="152" width="132" height="66"/>
                                         <color key="backgroundColor" red="0.11372549019607843" green="0.49803921568627452" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="3">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <variation key="widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        </variation>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUr-sj-YEP">
                                         <rect key="frame" x="8" y="226" width="132" height="66"/>
                                         <color key="backgroundColor" red="0.11372549019607843" green="0.49803921568627452" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="4">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <variation key="widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        </variation>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eBA-gX-r3S">
                                         <rect key="frame" x="148" y="226" width="132" height="66"/>
                                         <color key="backgroundColor" red="0.11372549019607843" green="0.49803921568627452" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="5">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <variation key="widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        </variation>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JP1-lM-l0n">
                                         <rect key="frame" x="288" y="226" width="132" height="66"/>
                                         <color key="backgroundColor" red="0.11372549019607843" green="0.49803921568627452" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="6">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <variation key="widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        </variation>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lIu-Gu-RQS">
                                         <rect key="frame" x="8" y="300" width="132" height="65"/>
                                         <color key="backgroundColor" red="0.11372549019607843" green="0.49803921568627452" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="7">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <variation key="widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        </variation>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bS2-FN-hxt">
                                         <rect key="frame" x="148" y="300" width="132" height="65"/>
                                         <color key="backgroundColor" red="0.11372549019607843" green="0.49803921568627452" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="8">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <variation key="widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        </variation>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dXl-l3-6da">
                                         <rect key="frame" x="288" y="300" width="132" height="65"/>
                                         <color key="backgroundColor" red="0.11372549019607843" green="0.49803921568627452" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="9">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <variation key="widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        </variation>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Hb-zD-BMK">
                                         <rect key="frame" x="8" y="373" width="132" height="66"/>
                                         <color key="backgroundColor" red="0.11372549019607843" green="0.49803921568627452" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="0">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <variation key="widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        </variation>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="85G-Lw-qM7">
                                         <rect key="frame" x="148" y="373" width="132" height="66"/>
                                         <color key="backgroundColor" red="0.11372549019607843" green="0.49803921568627452" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title=".">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <variation key="widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        </variation>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QWW-8V-oTb">
                                         <rect key="frame" x="288" y="373" width="132" height="66"/>
                                         <color key="backgroundColor" red="0.11372549019607843" green="0.49803921568627452" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="Next">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <variation key="widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        </variation>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zc0-Nm-lx3">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="zc0-Nm-lx3">
                                         <rect key="frame" x="70" y="98" width="117" height="30"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -494,6 +626,9 @@
                                             <mask key="constraints">
                                                 <exclude reference="ywO-Mx-fys"/>
                                             </mask>
+                                        </variation>
+                                        <variation key="widthClass=compact">
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -521,14 +656,18 @@
                                     <constraint firstItem="8kH-9w-B9I" firstAttribute="top" secondItem="sEX-nA-C2t" secondAttribute="top" constant="8" id="EhL-PI-GAt"/>
                                     <constraint firstItem="O1g-bm-SW4" firstAttribute="centerY" secondItem="Sjm-PG-wRY" secondAttribute="centerY" id="FAo-C8-B8V"/>
                                     <constraint firstItem="0Hb-zD-BMK" firstAttribute="bottom" secondItem="QWW-8V-oTb" secondAttribute="bottom" id="FCC-Va-D9N"/>
-                                    <constraint firstItem="zc0-Nm-lx3" firstAttribute="leading" secondItem="dIu-oY-QMK" secondAttribute="trailing" constant="8" id="FSA-uG-vn2"/>
+                                    <constraint firstItem="zc0-Nm-lx3" firstAttribute="leading" secondItem="dIu-oY-QMK" secondAttribute="trailing" constant="8" id="FSA-uG-vn2">
+                                        <variation key="widthClass=compact" constant="4"/>
+                                    </constraint>
                                     <constraint firstItem="O9l-n4-u6w" firstAttribute="leading" secondItem="sEX-nA-C2t" secondAttribute="leading" constant="8" id="G3r-vT-33E"/>
                                     <constraint firstItem="qDA-cJ-g2l" firstAttribute="leading" secondItem="4R0-7x-Z0i" secondAttribute="trailing" constant="8" id="G5b-0e-2la"/>
                                     <constraint firstItem="0Hb-zD-BMK" firstAttribute="top" secondItem="lIu-Gu-RQS" secondAttribute="bottom" constant="8" id="GMx-zY-Mpe"/>
                                     <constraint firstItem="0Hb-zD-BMK" firstAttribute="width" secondItem="eBA-gX-r3S" secondAttribute="width" id="GWE-XV-iGu"/>
                                     <constraint firstAttribute="bottom" secondItem="0Hb-zD-BMK" secondAttribute="bottom" constant="10" id="Hja-zN-rca"/>
                                     <constraint firstItem="O1g-bm-SW4" firstAttribute="width" secondItem="4R0-7x-Z0i" secondAttribute="width" id="Ipw-qm-E8C"/>
-                                    <constraint firstItem="O1g-bm-SW4" firstAttribute="leading" secondItem="qDA-cJ-g2l" secondAttribute="trailing" constant="8" id="KJo-vi-qRi"/>
+                                    <constraint firstItem="O1g-bm-SW4" firstAttribute="leading" secondItem="qDA-cJ-g2l" secondAttribute="trailing" constant="8" id="KJo-vi-qRi">
+                                        <variation key="widthClass=compact" constant="4"/>
+                                    </constraint>
                                     <constraint firstItem="0Hb-zD-BMK" firstAttribute="height" secondItem="QWW-8V-oTb" secondAttribute="height" id="L23-kP-UdR"/>
                                     <constraint firstItem="0Hb-zD-BMK" firstAttribute="height" secondItem="fUr-sj-YEP" secondAttribute="height" id="L7O-vl-Sjd"/>
                                     <constraint firstItem="lIu-Gu-RQS" firstAttribute="top" secondItem="fUr-sj-YEP" secondAttribute="bottom" constant="8" id="LMK-hw-kJw"/>
@@ -546,10 +685,14 @@
                                     <constraint firstItem="Sjm-PG-wRY" firstAttribute="width" secondItem="Pxl-Id-NnV" secondAttribute="width" id="RBS-DU-f1e"/>
                                     <constraint firstItem="O1g-bm-SW4" firstAttribute="width" secondItem="Pxl-Id-NnV" secondAttribute="width" id="Svd-YO-6Cq"/>
                                     <constraint firstItem="0Hb-zD-BMK" firstAttribute="width" secondItem="fUr-sj-YEP" secondAttribute="width" id="TSP-A8-2YS"/>
-                                    <constraint firstItem="O9l-n4-u6w" firstAttribute="top" secondItem="zc0-Nm-lx3" secondAttribute="bottom" constant="24" id="Tlk-xB-1gq"/>
+                                    <constraint firstItem="O9l-n4-u6w" firstAttribute="top" secondItem="zc0-Nm-lx3" secondAttribute="bottom" constant="24" id="Tlk-xB-1gq">
+                                        <variation key="widthClass=compact" constant="16"/>
+                                    </constraint>
                                     <constraint firstItem="0Hb-zD-BMK" firstAttribute="width" secondItem="GjX-ao-wWn" secondAttribute="width" id="URs-Qc-whp"/>
                                     <constraint firstItem="0Hb-zD-BMK" firstAttribute="width" secondItem="GJi-PY-yPX" secondAttribute="width" id="UXT-lz-WD7"/>
-                                    <constraint firstItem="Sjm-PG-wRY" firstAttribute="top" secondItem="Tx2-bk-cxp" secondAttribute="bottom" constant="15" id="Vmo-2G-9CQ"/>
+                                    <constraint firstItem="Sjm-PG-wRY" firstAttribute="top" secondItem="Tx2-bk-cxp" secondAttribute="bottom" constant="15" id="Vmo-2G-9CQ">
+                                        <variation key="widthClass=compact" constant="8"/>
+                                    </constraint>
                                     <constraint firstItem="eBA-gX-r3S" firstAttribute="leading" secondItem="85G-Lw-qM7" secondAttribute="leading" id="WaJ-Us-baI"/>
                                     <constraint firstAttribute="trailing" secondItem="GJi-PY-yPX" secondAttribute="trailing" constant="8" id="Wsg-JW-XWC"/>
                                     <constraint firstItem="sPz-HA-Q81" firstAttribute="width" secondItem="OQ6-LN-WMa" secondAttribute="width" id="XZt-Pb-dzg"/>
@@ -575,7 +718,9 @@
                                     <constraint firstItem="0Hb-zD-BMK" firstAttribute="height" secondItem="JP1-lM-l0n" secondAttribute="height" id="cpv-02-gO2"/>
                                     <constraint firstItem="O9l-n4-u6w" firstAttribute="leading" secondItem="lIu-Gu-RQS" secondAttribute="leading" id="dNt-aI-RkI"/>
                                     <constraint firstItem="GJi-PY-yPX" firstAttribute="leading" secondItem="JP1-lM-l0n" secondAttribute="trailing" constant="8" id="dRn-tn-LC6"/>
-                                    <constraint firstItem="4R0-7x-Z0i" firstAttribute="leading" secondItem="Sjm-PG-wRY" secondAttribute="trailing" constant="8" id="dTb-Wr-dm0"/>
+                                    <constraint firstItem="4R0-7x-Z0i" firstAttribute="leading" secondItem="Sjm-PG-wRY" secondAttribute="trailing" constant="8" id="dTb-Wr-dm0">
+                                        <variation key="widthClass=compact" constant="4"/>
+                                    </constraint>
                                     <constraint firstItem="sPz-HA-Q81" firstAttribute="centerY" secondItem="Tx2-bk-cxp" secondAttribute="centerY" id="eJS-fK-qpr"/>
                                     <constraint firstItem="O9l-n4-u6w" firstAttribute="top" secondItem="GjX-ao-wWn" secondAttribute="top" id="eOi-wC-7gg"/>
                                     <constraint firstItem="O9l-n4-u6w" firstAttribute="top" secondItem="QcR-bp-p0j" secondAttribute="top" id="eVE-Av-2YO"/>
@@ -583,15 +728,23 @@
                                     <constraint firstItem="0Hb-zD-BMK" firstAttribute="width" secondItem="QWW-8V-oTb" secondAttribute="width" id="eoH-gn-4ru"/>
                                     <constraint firstItem="eBA-gX-r3S" firstAttribute="leading" secondItem="QcR-bp-p0j" secondAttribute="leading" id="fBw-Rj-qJk"/>
                                     <constraint firstItem="O1g-bm-SW4" firstAttribute="centerY" secondItem="VcB-aC-Pxa" secondAttribute="centerY" id="fLI-Ca-XiM"/>
-                                    <constraint firstItem="OQ6-LN-WMa" firstAttribute="leading" secondItem="sPz-HA-Q81" secondAttribute="trailing" constant="8" id="gNO-GB-3oO"/>
-                                    <constraint firstItem="dIu-oY-QMK" firstAttribute="top" secondItem="Sjm-PG-wRY" secondAttribute="bottom" constant="15" id="gdd-Os-TzH"/>
+                                    <constraint firstItem="OQ6-LN-WMa" firstAttribute="leading" secondItem="sPz-HA-Q81" secondAttribute="trailing" constant="8" id="gNO-GB-3oO">
+                                        <variation key="widthClass=compact" constant="4"/>
+                                    </constraint>
+                                    <constraint firstItem="dIu-oY-QMK" firstAttribute="top" secondItem="Sjm-PG-wRY" secondAttribute="bottom" constant="15" id="gdd-Os-TzH">
+                                        <variation key="widthClass=compact" constant="8"/>
+                                    </constraint>
                                     <constraint firstItem="85G-Lw-qM7" firstAttribute="top" secondItem="0Hb-zD-BMK" secondAttribute="top" id="j1g-u6-7D5"/>
                                     <constraint firstItem="Tx2-bk-cxp" firstAttribute="top" secondItem="sEX-nA-C2t" secondAttribute="top" constant="8" id="j5P-St-WxL"/>
                                     <constraint firstItem="VcB-aC-Pxa" firstAttribute="width" secondItem="4R0-7x-Z0i" secondAttribute="width" id="jol-E7-jjW"/>
                                     <constraint firstItem="VcB-aC-Pxa" firstAttribute="width" secondItem="O1g-bm-SW4" secondAttribute="width" id="k0h-65-8YB"/>
                                     <constraint firstItem="Sjm-PG-wRY" firstAttribute="leading" secondItem="dIu-oY-QMK" secondAttribute="leading" id="k9C-Vx-chQ"/>
-                                    <constraint firstItem="x22-qF-p6b" firstAttribute="leading" secondItem="Tx2-bk-cxp" secondAttribute="trailing" constant="8" id="kKJ-OS-OVZ"/>
-                                    <constraint firstItem="VcB-aC-Pxa" firstAttribute="leading" secondItem="Pxl-Id-NnV" secondAttribute="trailing" constant="8" id="kSb-SQ-bak"/>
+                                    <constraint firstItem="x22-qF-p6b" firstAttribute="leading" secondItem="Tx2-bk-cxp" secondAttribute="trailing" constant="8" id="kKJ-OS-OVZ">
+                                        <variation key="widthClass=compact" constant="4"/>
+                                    </constraint>
+                                    <constraint firstItem="VcB-aC-Pxa" firstAttribute="leading" secondItem="Pxl-Id-NnV" secondAttribute="trailing" constant="8" id="kSb-SQ-bak">
+                                        <variation key="widthClass=compact" constant="4"/>
+                                    </constraint>
                                     <constraint firstItem="GJi-PY-yPX" firstAttribute="trailing" secondItem="fWy-6F-VGi" secondAttribute="trailing" id="l40-jl-Shh"/>
                                     <constraint firstItem="GJi-PY-yPX" firstAttribute="leading" secondItem="fWy-6F-VGi" secondAttribute="leading" id="m9w-2p-cXh"/>
                                     <constraint firstItem="GjX-ao-wWn" firstAttribute="leading" secondItem="QcR-bp-p0j" secondAttribute="trailing" constant="8" id="n3M-qa-6Cx"/>
@@ -602,7 +755,9 @@
                                     <constraint firstItem="O1g-bm-SW4" firstAttribute="width" secondItem="Sjm-PG-wRY" secondAttribute="width" id="pDe-wj-5Wj"/>
                                     <constraint firstItem="85G-Lw-qM7" firstAttribute="top" secondItem="QWW-8V-oTb" secondAttribute="top" id="qLb-uq-8Wf"/>
                                     <constraint firstItem="sPz-HA-Q81" firstAttribute="width" secondItem="YGB-ls-Vfr" secondAttribute="width" id="qMA-pH-aIz"/>
-                                    <constraint firstItem="8kH-9w-B9I" firstAttribute="leading" secondItem="YGB-ls-Vfr" secondAttribute="trailing" constant="8" id="r97-LD-pzj"/>
+                                    <constraint firstItem="8kH-9w-B9I" firstAttribute="leading" secondItem="YGB-ls-Vfr" secondAttribute="trailing" constant="8" id="r97-LD-pzj">
+                                        <variation key="widthClass=compact" constant="4"/>
+                                    </constraint>
                                     <constraint firstItem="sPz-HA-Q81" firstAttribute="centerY" secondItem="8kH-9w-B9I" secondAttribute="centerY" id="rwu-51-a4z"/>
                                     <constraint firstItem="QcR-bp-p0j" firstAttribute="leading" secondItem="O9l-n4-u6w" secondAttribute="trailing" constant="8" id="sX2-vc-8Kh"/>
                                     <constraint firstItem="QWW-8V-oTb" firstAttribute="leading" secondItem="GjX-ao-wWn" secondAttribute="leading" id="tSP-fi-4Af"/>
