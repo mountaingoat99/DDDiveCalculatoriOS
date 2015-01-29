@@ -10,7 +10,6 @@
 
 @interface ViewController ()
 
-@property (nonatomic, strong) NSNumber *dd;
 @property (nonatomic, strong) NSNumber *sc1;
 @property (nonatomic, strong) NSNumber *sc2;
 @property (nonatomic, strong) NSNumber *sc3;
@@ -20,9 +19,19 @@
 @property (nonatomic, strong) NSNumber *sc7;
 @property (nonatomic, strong) NSNumber *total;
 
--(NSNumber*)CalcScores;
+@property (nonatomic) double dd;
+@property (nonatomic) double score1;
+@property (nonatomic) double score2;
+@property (nonatomic) double score3;
+@property (nonatomic) double score4;
+@property (nonatomic) double score5;
+@property (nonatomic) double score6;
+@property (nonatomic) double score7;
+
+-(NSString*)CalcScores;
 -(void)UpdateTxtField:(NSString*)digit;
 -(NSString*)CheckRegEx:(NSString*)enteredNumber textNumber:(NSString*)textNumber;
+-(NSString*)DeleteText:(NSString*)textfield;
 
 @end
 
@@ -225,7 +234,7 @@
     self.txtScore6.text = @"";
     self.txtScore7.text = @"";
     self.lblTotal.text = @"";
-    self.dd = nil;
+    self.dd = 0;
     self.total = nil;
     self.sc1 = nil;
     self.sc2 = nil;
@@ -246,6 +255,20 @@
 }
 
 - (IBAction)btnTotal:(id)sender {
+    
+    if (self.txtdd.text.length > 0) {
+        
+        self.lblTotal.text = [self CalcScores];
+        
+    } else {
+        UIAlertView *error = [[UIAlertView alloc] initWithTitle:@"Hold On!"
+                                                        message:@"Please enter a Dive DD"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [error show];
+        [error reloadInputViews];
+    }
 }
 
 - (IBAction)btnOne:(id)sender {
@@ -361,98 +384,158 @@
         // we only want to erase if there is text, error otherwise
         if (self.txtdd.text.length > 0) {
             
-            NSString *tempString = self.txtdd.text;
-            NSString *newString = [tempString substringToIndex:[tempString length] -1];
-            self.txtdd.text = newString;
+            self.txtdd.text = [self DeleteText:self.txtdd.text];
         }
     }
     
     if (self.txtScore1.highlighted) {
         
-        // we only want to erase if there is text, error otherwise
         if (self.txtScore1.text.length > 0) {
             
-            NSString *tempString = self.txtScore1.text;
-            NSString *newString = [tempString substringToIndex:[tempString length] -1];
-            self.txtScore1.text = newString;
+            self.txtScore1.text = [self DeleteText:self.txtScore1.text];
         }
     }
     
     if (self.txtScore2.highlighted) {
         
-        // we only want to erase if there is text, error otherwise
         if (self.txtScore2.text.length > 0) {
             
-            NSString *tempString = self.txtScore2.text;
-            NSString *newString = [tempString substringToIndex:[tempString length] -1];
-            self.txtScore2.text = newString;
+            self.txtScore2.text = [self DeleteText:self.txtScore2.text];
         }
     }
     
     if (self.txtScore3.highlighted) {
         
-        // we only want to erase if there is text, error otherwise
         if (self.txtScore3.text.length > 0) {
             
-            NSString *tempString = self.txtScore3.text;
-            NSString *newString = [tempString substringToIndex:[tempString length] -1];
-            self.txtScore3.text = newString;
+            self.txtScore3.text = [self DeleteText:self.txtScore3.text];
         }
     }
     
     if (self.txtScore4.highlighted) {
         
-        // we only want to erase if there is text, error otherwise
         if (self.txtScore4.text.length > 0) {
             
-            NSString *tempString = self.txtScore4.text;
-            NSString *newString = [tempString substringToIndex:[tempString length] -1];
-            self.txtScore4.text = newString;
+            self.txtScore4.text = [self DeleteText:self.txtScore4.text];
         }
     }
     
     if (self.txtScore5.highlighted) {
         
-        // we only want to erase if there is text, error otherwise
         if (self.txtScore5.text.length > 0) {
             
-            NSString *tempString = self.txtScore5.text;
-            NSString *newString = [tempString substringToIndex:[tempString length] -1];
-            self.txtScore5.text = newString;
+            self.txtScore5.text = [self DeleteText:self.txtScore5.text];
         }
     }
     
     if (self.txtScore6.highlighted) {
         
-        // we only want to erase if there is text, error otherwise
         if (self.txtScore6.text.length > 0) {
             
-            NSString *tempString = self.txtScore6.text;
-            NSString *newString = [tempString substringToIndex:[tempString length] -1];
-            self.txtScore6.text = newString;
+            self.txtScore6.text = [self DeleteText:self.txtScore6.text];
         }
     }
     
     if (self.txtScore7.highlighted) {
         
-        // we only want to erase if there is text, error otherwise
         if (self.txtScore7.text.length > 0) {
             
-            NSString *tempString = self.txtScore7.text;
-            NSString *newString = [tempString substringToIndex:[tempString length] -1];
-            self.txtScore7.text = newString;
+            self.txtScore7.text = [self DeleteText:self.txtScore7.text];
         }
     }
 }
 
 #pragma private methods
 
--(NSNumber*)CalcScores {
+-(NSString*)CalcScores {
+    
+    // create a mutable array
+    NSMutableArray *scores = [[NSMutableArray alloc] init];
+    double finalScore = 0;
+    
+    // get the double from the dd box
+    self.dd = [self.txtdd.text doubleValue];
+    
+    // convert the other score boxes to NSNumber to out them in a mutable array
+    if (self.txtScore1.text.length > 0) {
+        self.sc1 = @([self.txtScore1.text doubleValue]);
+        [scores addObject: self.sc1];
+    }
+    if (self.txtScore2.text.length > 0) {
+        self.sc2 = @([self.txtScore2.text doubleValue]);
+        [scores addObject: self.sc2];
+    }
+    if (self.txtScore3.text.length > 0) {
+        self.sc3 = @([self.txtScore3.text doubleValue]);
+        [scores addObject: self.sc3];
+    }
+    if (self.txtScore4.text.length > 0) {
+        self.sc4 = @([self.txtScore4.text doubleValue]);
+        [scores addObject: self.sc4];
+    }
+    if (self.txtScore5.text.length > 0) {
+        self.sc5 = @([self.txtScore5.text doubleValue]);
+        [scores addObject: self.sc5];
+    }
+    if (self.txtScore6.text.length > 0) {
+        self.sc6 = @([self.txtScore6.text doubleValue]);
+        [scores addObject: self.sc6];
+    }
+    if (self.txtScore7.text.length > 0) {
+        self.sc7 = @([self.txtScore7.text doubleValue]);
+        [scores addObject: self.sc7];
+    }
+    
+    // sort the array
+    NSArray *sortedScores = [scores sortedArrayUsingSelector:@selector(compare:)];
+    
+    if (sortedScores.count > 1) {
+        if (sortedScores.count == 2) {
+            //score 2 judge meet
+            
+            self.score1 = [[sortedScores objectAtIndex:0] doubleValue];
+            self.score2 = [[sortedScores objectAtIndex:1] doubleValue];
+            
+            finalScore = ((self.score1 + self.score2) * 1.5) * self.dd;
+            
+        } else if (sortedScores.count == 3) {
+            
+        } else if (sortedScores.count == 5) {
+            
+        } else if (sortedScores.count == 7) {
+            
+        } else {
+            UIAlertView *error = [[UIAlertView alloc] initWithTitle:@"Hold On!"
+                                                            message:@"You have to enter either 2, 3, 5, or 7 scores"
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [error show];
+            [error reloadInputViews];
+        }
+    
+        
+    } else {
+        UIAlertView *error = [[UIAlertView alloc] initWithTitle:@"Hold On!"
+                                                        message:@"You didn't enter enough scores"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [error show];
+        [error reloadInputViews];
 
+    }
     
-    NSNumber *test;
+    NSString *returnString = [[NSString alloc] initWithFormat:@"%f", finalScore];
     
-    return test;
+    return returnString;
+}
+
+-(NSString*)DeleteText:(NSString*)textfield {
+    
+    NSString *newString = [textfield substringToIndex:[textfield length] -1];
+    
+    return newString;
 }
 
 -(void)UpdateTxtField:(NSString*)digit {
@@ -461,7 +544,7 @@
         
         // we'll just use this one since the dd uses different digits than the scores
         NSString *tempString = self.txtdd.text;
-        NSRange range = NSRangeFromString([NSString stringWithFormat:@"{0:%d}", self.txtdd.text.length]);
+        NSRange range = NSRangeFromString([NSString stringWithFormat:@"{0:%lu}", (unsigned long)self.txtdd.text.length]);
         NSString *newString = [self.txtdd.text stringByReplacingCharactersInRange:range withString:digit];
         tempString = [tempString stringByAppendingString:newString];
         //NSString *expression = @"^([0-9]|10{1}+)?(\\.([0|5]{1})?)?$";
@@ -480,56 +563,85 @@
         
         NSString *tempString = self.txtScore1.text;
         
-        self.txtScore1.text = [self CheckRegEx:digit textNumber:tempString];
+        NSString *test = [self CheckRegEx:digit textNumber:tempString];
+        
+        if (test.length > 0) {
+            self.txtScore1.text = test;
+        }
     }
     
     if (self.txtScore2.highlighted) {
         
         NSString *tempString = self.txtScore2.text;
         
-        self.txtScore2.text = [self CheckRegEx:digit textNumber:tempString];
+        NSString *test = [self CheckRegEx:digit textNumber:tempString];
+        
+        if (test.length > 0) {
+            self.txtScore2.text = test;
+        }
     }
     
     if (self.txtScore3.highlighted) {
         
         NSString *tempString = self.txtScore3.text;
         
-        self.txtScore3.text = [self CheckRegEx:digit textNumber:tempString];
+        NSString *test = [self CheckRegEx:digit textNumber:tempString];
+        
+        if (test.length > 0) {
+            self.txtScore3.text = test;
+        }
     }
     
     if (self.txtScore4.highlighted) {
         
         NSString *tempString = self.txtScore4.text;
         
-        self.txtScore4.text = [self CheckRegEx:digit textNumber:tempString];
+        NSString *test = [self CheckRegEx:digit textNumber:tempString];
+        
+        if (test.length > 0) {
+            self.txtScore4.text = test;
+        }
     }
     
     if (self.txtScore5.highlighted) {
         
         NSString *tempString = self.txtScore5.text;
         
-        self.txtScore5.text = [self CheckRegEx:digit textNumber:tempString];
+        NSString *test = [self CheckRegEx:digit textNumber:tempString];
+        
+        if (test.length > 0) {
+            self.txtScore5.text = test;
+        }
     }
     
     if (self.txtScore6.highlighted) {
         
         NSString *tempString = self.txtScore6.text;
         
-        self.txtScore6.text = [self CheckRegEx:digit textNumber:tempString];
+        NSString *test = [self CheckRegEx:digit textNumber:tempString];
+        
+        if (test.length > 0) {
+            self.txtScore6.text = test;
+        }
     }
     
     if (self.txtScore7.highlighted) {
         
         NSString *tempString = self.txtScore7.text;
-    
-        self.txtScore7.text = [self CheckRegEx:digit textNumber:tempString];
+        
+        NSString *test = [self CheckRegEx:digit textNumber:tempString];
+        
+        if (test.length > 0) {
+            self.txtScore7.text = test;
+        }
     }
 }
 
+// this checks the entry in the score boxes, only allow digit || 10, ., 0|5
 -(NSString*)CheckRegEx:(NSString*)enteredNumber textNumber:(NSString*)textNumber {
     
     NSString *tempString = textNumber;
-    NSRange range = NSRangeFromString([NSString stringWithFormat:@"{0:%d}", textNumber.length]);
+    NSRange range = NSRangeFromString([NSString stringWithFormat:@"{0:%lu}", (unsigned long)textNumber.length]);
     NSString *newString = [textNumber stringByReplacingCharactersInRange:range withString:enteredNumber];
     tempString = [tempString stringByAppendingString:newString];
     NSString *expression = @"^([0-9]|10{1}+)?(\\.([0|5]{1})?)?$";
