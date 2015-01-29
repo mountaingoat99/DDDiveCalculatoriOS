@@ -9,7 +9,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -27,7 +27,6 @@
                                             <constraint firstAttribute="height" constant="30" id="qPr-2y-WyG"/>
                                             <constraint firstAttribute="width" constant="50" id="y1u-ah-Y5U"/>
                                         </constraints>
-                                        <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad" keyboardAppearance="light"/>
                                         <variation key="default">
@@ -62,8 +61,8 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="7v2-Ph-ppc"/>
                                             <constraint firstAttribute="width" constant="60" id="TcJ-V5-vWe">
-                                                <variation key="widthClass=compact" constant="40"/>
-                                                <variation key="heightClass=regular-widthClass=regular" constant="60"/>
+                                                <variation key="widthClass=compact" constant="60"/>
+                                                <variation key="heightClass=regular-widthClass=regular" constant="85"/>
                                             </constraint>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -525,7 +524,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
-                                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                         </variation>
                                         <connections>
                                             <action selector="btnClear:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UIM-3W-sKT"/>
@@ -543,7 +542,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=regular">
-                                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                         </variation>
                                         <connections>
                                             <action selector="btnTotal:" destination="BYZ-38-t0r" eventType="touchUpInside" id="63Y-Wp-kD6"/>
@@ -560,6 +559,9 @@
                                         <variation key="widthClass=compact">
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         </variation>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                        </variation>
                                         <connections>
                                             <action selector="btnOne:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uL1-Fw-nba"/>
                                         </connections>
@@ -574,6 +576,9 @@
                                         </state>
                                         <variation key="widthClass=compact">
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                         </variation>
                                         <connections>
                                             <action selector="btnTwo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="geG-Wl-vs3"/>
@@ -590,6 +595,9 @@
                                         <variation key="widthClass=compact">
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         </variation>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                        </variation>
                                         <connections>
                                             <action selector="btnThree:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wgu-Uw-t9O"/>
                                         </connections>
@@ -604,6 +612,9 @@
                                         </state>
                                         <variation key="widthClass=compact">
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                         </variation>
                                         <connections>
                                             <action selector="btnFour:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jiA-lu-Km3"/>
@@ -620,6 +631,9 @@
                                         <variation key="widthClass=compact">
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         </variation>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                        </variation>
                                         <connections>
                                             <action selector="btnFive:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R5O-vv-WE0"/>
                                         </connections>
@@ -634,6 +648,9 @@
                                         </state>
                                         <variation key="widthClass=compact">
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                         </variation>
                                         <connections>
                                             <action selector="btnSix:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6ih-Qa-E08"/>
@@ -650,6 +667,9 @@
                                         <variation key="widthClass=compact">
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         </variation>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                        </variation>
                                         <connections>
                                             <action selector="btnBack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w3s-eH-kch"/>
                                         </connections>
@@ -664,6 +684,9 @@
                                         </state>
                                         <variation key="widthClass=compact">
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                         </variation>
                                         <connections>
                                             <action selector="btnSeven:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bi0-93-c6Y"/>
@@ -680,6 +703,9 @@
                                         <variation key="widthClass=compact">
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         </variation>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                        </variation>
                                         <connections>
                                             <action selector="btnEight:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8hU-Bb-W10"/>
                                         </connections>
@@ -694,6 +720,9 @@
                                         </state>
                                         <variation key="widthClass=compact">
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                         </variation>
                                         <connections>
                                             <action selector="btnNine:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SUy-o5-xXq"/>
@@ -710,6 +739,9 @@
                                         <variation key="widthClass=compact">
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         </variation>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                        </variation>
                                         <connections>
                                             <action selector="btnZero:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DQn-PL-7pP"/>
                                         </connections>
@@ -725,6 +757,9 @@
                                         <variation key="widthClass=compact">
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         </variation>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                        </variation>
                                         <connections>
                                             <action selector="btnPeriod:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a2w-10-vJs"/>
                                         </connections>
@@ -739,6 +774,9 @@
                                         </state>
                                         <variation key="widthClass=compact">
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                         </variation>
                                         <connections>
                                             <action selector="btnNext:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i52-gu-Yyh"/>

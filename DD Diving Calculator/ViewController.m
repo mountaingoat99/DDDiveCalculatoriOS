@@ -70,7 +70,6 @@
     self.txtScore6.inputView = dummyView;
     self.txtScore7.inputView = dummyView;
     
-    // make the dd the first responder
     [self.txtdd becomeFirstResponder];
     [self.txtdd setHighlighted:YES];
 }
@@ -92,47 +91,30 @@
 -(void)encodeRestorableStateWithCoder:(NSCoder *)coder {
     [super encodeRestorableStateWithCoder:coder];
     
-    if (self.txtdd.text.length > 0) {
-        [coder encodeObject:self.txtdd.text forKey:@"ddText"];
-    }
-    if (self.txtScore1.text.length > 0) {
-        [coder encodeObject:self.txtScore1.text forKey:@"score1"];
-    }
-    if (self.txtScore2.text.length > 0) {
-        [coder encodeObject:self.txtScore2.text forKey:@"score2"];
-    }
-    if (self.txtScore3.text.length > 0) {
-        [coder encodeObject:self.txtScore3.text forKey:@"score3"];
-    }
-    if (self.txtScore4.text.length > 0) {
-        [coder encodeObject:self.txtScore4.text forKey:@"score4"];
-    }
-    if (self.txtScore5.text.length > 0) {
-        [coder encodeObject:self.txtScore5.text forKey:@"score5"];
-    }
-    if (self.txtScore6.text.length > 0) {
-        [coder encodeObject:self.txtScore6.text forKey:@"score6"];
-    }
-    if (self.txtScore7.text.length > 0) {
-        [coder encodeObject:self.txtScore7.text forKey:@"score7"];
-    }
-    if (self.lblTotal.text.length > 0) {
-        [coder encodeObject:self.lblTotal.text forKey:@"total"];
-    }
+    [coder encodeObject:self.txtdd.text forKey:@"ddText"];
+    [coder encodeObject:self.txtScore1.text forKey:@"score1"];
+    [coder encodeObject:self.txtScore2.text forKey:@"score2"];
+    [coder encodeObject:self.txtScore3.text forKey:@"score3"];
+    [coder encodeObject:self.txtScore4.text forKey:@"score4"];
+    [coder encodeObject:self.txtScore5.text forKey:@"score5"];
+    [coder encodeObject:self.txtScore6.text forKey:@"score6"];
+    [coder encodeObject:self.txtScore7.text forKey:@"score7"];
+    [coder encodeObject:self.lblTotal.text forKey:@"total"];
+    
 }
 
 -(void)decodeRestorableStateWithCoder:(NSCoder *)coder  {
     [super decodeRestorableStateWithCoder:coder];
     
     self.txtdd.text = [coder decodeObjectForKey:@"ddText"];
-    self.txtScore1 = [coder decodeObjectForKey:@"score1"];
-    self.txtScore2 = [coder decodeObjectForKey:@"score2"];
-    self.txtScore3 = [coder decodeObjectForKey:@"score3"];
-    self.txtScore4 = [coder decodeObjectForKey:@"score4"];
-    self.txtScore5 = [coder decodeObjectForKey:@"score5"];
-    self.txtScore6 = [coder decodeObjectForKey:@"score6"];
-    self.txtScore7 = [coder decodeObjectForKey:@"score7"];
-    self.lblTotal = [coder decodeObjectForKey:@"total"];
+    self.txtScore1.text = [coder decodeObjectForKey:@"score1"];
+    self.txtScore2.text = [coder decodeObjectForKey:@"score2"];
+    self.txtScore3.text = [coder decodeObjectForKey:@"score3"];
+    self.txtScore4.text = [coder decodeObjectForKey:@"score4"];
+    self.txtScore5.text = [coder decodeObjectForKey:@"score5"];
+    self.txtScore6.text = [coder decodeObjectForKey:@"score6"];
+    self.txtScore7.text = [coder decodeObjectForKey:@"score7"];
+    self.lblTotal.text = [coder decodeObjectForKey:@"total"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -545,10 +527,6 @@
     }
     
     NSNumber *theNumber = [NSNumber numberWithDouble:finalScore];
-    
-    //NSString *returnString = [[NSString alloc] initWithFormat:@"%f", finalScore];
-    
-    //return returnString;
     
     return theNumber;
 }
