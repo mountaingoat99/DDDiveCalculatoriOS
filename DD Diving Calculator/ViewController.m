@@ -10,6 +10,20 @@
 
 @interface ViewController ()
 
+@property (nonatomic, strong) NSNumber *dd;
+@property (nonatomic, strong) NSNumber *sc1;
+@property (nonatomic, strong) NSNumber *sc2;
+@property (nonatomic, strong) NSNumber *sc3;
+@property (nonatomic, strong) NSNumber *sc4;
+@property (nonatomic, strong) NSNumber *sc5;
+@property (nonatomic, strong) NSNumber *sc6;
+@property (nonatomic, strong) NSNumber *sc7;
+@property (nonatomic, strong) NSNumber *total;
+
+-(NSNumber*)CalcScores;
+-(void)UpdateTxtField:(NSString*)digit;
+-(NSString*)CheckRegEx:(NSString*)enteredNumber textNumber:(NSString*)textNumber;
+
 @end
 
 @implementation ViewController
@@ -27,13 +41,29 @@
     self.viewBottom.layer.masksToBounds = NO;
     self.viewBottom.layer.shadowOpacity = .5;
     
-//    self.txtdd.layer.shadowColor = [UIColor blueColor].CGColor;
-//    self.txtdd.layer.shadowOffset = CGSizeMake(.1f, .1f);
-//    self.txtdd.layer.masksToBounds = NO;
-//    self.txtdd.layer.shadowOpacity = .3;
-//    self.txtdd.layer.sublayerTransform = CATransform3DMakeTranslation(5, 0, 0);
+    self.txtdd.delegate = self;
+    self.txtScore1.delegate = self;
+    self.txtScore2.delegate = self;
+    self.txtScore3.delegate = self;
+    self.txtScore4.delegate = self;
+    self.txtScore5.delegate = self;
+    self.txtScore6.delegate = self;
+    self.txtScore7.delegate = self;
     
+    // disable the keyboard on the UITextFields
+    UIView *dummyView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1, 1)];
+    self.txtdd.inputView = dummyView;
+    self.txtScore1.inputView = dummyView;
+    self.txtScore2.inputView = dummyView;
+    self.txtScore3.inputView = dummyView;
+    self.txtScore4.inputView = dummyView;
+    self.txtScore5.inputView = dummyView;
+    self.txtScore6.inputView = dummyView;
+    self.txtScore7.inputView = dummyView;
     
+    // make the dd the first responder
+    [self.txtdd becomeFirstResponder];
+    [self.txtdd setHighlighted:YES];
 }
 
 // only allow portrait in iphone
@@ -49,14 +79,469 @@
     }
 }
 
+// state restoration
+-(void)encodeRestorableStateWithCoder:(NSCoder *)coder {
+    [super encodeRestorableStateWithCoder:coder];
+    
+    if (self.txtdd.text.length > 0) {
+        [coder encodeObject:self.txtdd.text forKey:@"ddText"];
+    }
+    if (self.txtScore1.text.length > 0) {
+        [coder encodeObject:self.txtScore1.text forKey:@"score1"];
+    }
+    if (self.txtScore2.text.length > 0) {
+        [coder encodeObject:self.txtScore2.text forKey:@"score2"];
+    }
+    if (self.txtScore3.text.length > 0) {
+        [coder encodeObject:self.txtScore3.text forKey:@"score3"];
+    }
+    if (self.txtScore4.text.length > 0) {
+        [coder encodeObject:self.txtScore4.text forKey:@"score4"];
+    }
+    if (self.txtScore5.text.length > 0) {
+        [coder encodeObject:self.txtScore5.text forKey:@"score5"];
+    }
+    if (self.txtScore6.text.length > 0) {
+        [coder encodeObject:self.txtScore6.text forKey:@"score6"];
+    }
+    if (self.txtScore7.text.length > 0) {
+        [coder encodeObject:self.txtScore7.text forKey:@"score7"];
+    }
+    if (self.lblTotal.text.length > 0) {
+        [coder encodeObject:self.lblTotal.text forKey:@"total"];
+    }
+}
+
+-(void)decodeRestorableStateWithCoder:(NSCoder *)coder  {
+    [super decodeRestorableStateWithCoder:coder];
+    
+    self.txtdd.text = [coder decodeObjectForKey:@"ddText"];
+    self.txtScore1 = [coder decodeObjectForKey:@"score1"];
+    self.txtScore2 = [coder decodeObjectForKey:@"score2"];
+    self.txtScore3 = [coder decodeObjectForKey:@"score3"];
+    self.txtScore4 = [coder decodeObjectForKey:@"score4"];
+    self.txtScore5 = [coder decodeObjectForKey:@"score5"];
+    self.txtScore6 = [coder decodeObjectForKey:@"score6"];
+    self.txtScore7 = [coder decodeObjectForKey:@"score7"];
+    self.lblTotal = [coder decodeObjectForKey:@"total"];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+-(void) textFieldDidBeginEditing:(UITextField *)textField {
+    
+    if (textField == self.txtdd) {
+        [self.txtScore1 setHighlighted:NO];
+        [self.txtScore2 setHighlighted:NO];
+        [self.txtScore3 setHighlighted:NO];
+        [self.txtScore4 setHighlighted:NO];
+        [self.txtScore5 setHighlighted:NO];
+        [self.txtScore6 setHighlighted:NO];
+        [self.txtScore7 setHighlighted:NO];
+    }
+    
+    if (textField == self.txtScore1) {
+        [self.txtdd setHighlighted:NO];
+        [self.txtScore2 setHighlighted:NO];
+        [self.txtScore3 setHighlighted:NO];
+        [self.txtScore4 setHighlighted:NO];
+        [self.txtScore5 setHighlighted:NO];
+        [self.txtScore6 setHighlighted:NO];
+        [self.txtScore7 setHighlighted:NO];
+    }
+    
+    if (textField == self.txtScore2) {
+        [self.txtdd setHighlighted:NO];
+        [self.txtScore1 setHighlighted:NO];
+        [self.txtScore3 setHighlighted:NO];
+        [self.txtScore4 setHighlighted:NO];
+        [self.txtScore5 setHighlighted:NO];
+        [self.txtScore6 setHighlighted:NO];
+        [self.txtScore7 setHighlighted:NO];
+    }
+    
+    if (textField == self.txtScore3) {
+        [self.txtdd setHighlighted:NO];
+        [self.txtScore2 setHighlighted:NO];
+        [self.txtScore1 setHighlighted:NO];
+        [self.txtScore4 setHighlighted:NO];
+        [self.txtScore5 setHighlighted:NO];
+        [self.txtScore6 setHighlighted:NO];
+        [self.txtScore7 setHighlighted:NO];
+    }
+    
+    if (textField == self.txtScore4) {
+        [self.txtdd setHighlighted:NO];
+        [self.txtScore2 setHighlighted:NO];
+        [self.txtScore3 setHighlighted:NO];
+        [self.txtScore1 setHighlighted:NO];
+        [self.txtScore5 setHighlighted:NO];
+        [self.txtScore6 setHighlighted:NO];
+        [self.txtScore7 setHighlighted:NO];
+    }
+    
+    if (textField == self.txtScore5) {
+        [self.txtdd setHighlighted:NO];
+        [self.txtScore2 setHighlighted:NO];
+        [self.txtScore3 setHighlighted:NO];
+        [self.txtScore4 setHighlighted:NO];
+        [self.txtScore1 setHighlighted:NO];
+        [self.txtScore6 setHighlighted:NO];
+        [self.txtScore7 setHighlighted:NO];
+    }
+    
+    if (textField == self.txtScore6) {
+        [self.txtdd setHighlighted:NO];
+        [self.txtScore2 setHighlighted:NO];
+        [self.txtScore3 setHighlighted:NO];
+        [self.txtScore4 setHighlighted:NO];
+        [self.txtScore5 setHighlighted:NO];
+        [self.txtScore1 setHighlighted:NO];
+        [self.txtScore7 setHighlighted:NO];
+    }
+    
+    if (textField == self.txtScore7) {
+        [self.txtdd setHighlighted:NO];
+        [self.txtScore2 setHighlighted:NO];
+        [self.txtScore3 setHighlighted:NO];
+        [self.txtScore4 setHighlighted:NO];
+        [self.txtScore5 setHighlighted:NO];
+        [self.txtScore6 setHighlighted:NO];
+        [self.txtScore1 setHighlighted:NO];
+    }
+}
+
 - (IBAction)btnClear:(id)sender {
+    
+    self.txtdd.text = @"";
+    self.txtScore1.text = @"";
+    self.txtScore2.text = @"";
+    self.txtScore3.text = @"";
+    self.txtScore4.text = @"";
+    self.txtScore5.text = @"";
+    self.txtScore6.text = @"";
+    self.txtScore7.text = @"";
+    self.lblTotal.text = @"";
+    self.dd = nil;
+    self.total = nil;
+    self.sc1 = nil;
+    self.sc2 = nil;
+    self.sc3 = nil;
+    self.sc4 = nil;
+    self.sc5 = nil;
+    self.sc6 = nil;
+    self.sc7 = nil;
+    [self.txtdd becomeFirstResponder];
+    [self.txtdd setHighlighted:YES];
+    [self.txtScore1 setHighlighted:NO];
+    [self.txtScore2 setHighlighted:NO];
+    [self.txtScore3 setHighlighted:NO];
+    [self.txtScore4 setHighlighted:NO];
+    [self.txtScore5 setHighlighted:NO];
+    [self.txtScore6 setHighlighted:NO];
+    [self.txtScore7 setHighlighted:NO];
 }
 
 - (IBAction)btnTotal:(id)sender {
 }
+
+- (IBAction)btnOne:(id)sender {
+    
+    [self UpdateTxtField:@"1"];
+}
+
+- (IBAction)btnTwo:(id)sender {
+    
+    [self UpdateTxtField:@"2"];
+}
+
+- (IBAction)btnThree:(id)sender {
+    
+    [self UpdateTxtField:@"3"];
+}
+
+- (IBAction)btnFour:(id)sender {
+    
+    [self UpdateTxtField:@"4"];
+}
+
+- (IBAction)btnFive:(id)sender {
+    
+    [self UpdateTxtField:@"5"];
+}
+
+- (IBAction)btnSix:(id)sender {
+    
+    [self UpdateTxtField:@"6"];
+}
+
+- (IBAction)btnSeven:(id)sender {
+    
+    [self UpdateTxtField:@"7"];
+}
+
+- (IBAction)btnEight:(id)sender {
+    
+    [self UpdateTxtField:@"8"];
+}
+
+- (IBAction)btnNine:(id)sender {
+    
+    [self UpdateTxtField:@"9"];
+}
+
+- (IBAction)btnZero:(id)sender {
+    
+    [self UpdateTxtField:@"0"];
+}
+
+- (IBAction)btnPeriod:(id)sender {
+    
+    [self UpdateTxtField:@"."];
+}
+
+- (IBAction)btnNext:(id)sender {
+    
+    if (self.txtdd.highlighted) {
+        [self.txtScore1 becomeFirstResponder];
+        [self.txtScore1 setHighlighted:YES];
+        [self.txtdd setHighlighted:NO];
+        return;
+    }
+    if (self.txtScore1.highlighted) {
+        [self.txtScore2 becomeFirstResponder];
+        [self.txtScore2 setHighlighted:YES];
+        [self.txtScore1 setHighlighted:NO];
+        return;
+    }
+    if (self.txtScore2.highlighted) {
+        [self.txtScore3 becomeFirstResponder];
+        [self.txtScore3 setHighlighted:YES];
+        [self.txtScore2 setHighlighted:NO];
+        return;
+    }
+    if (self.txtScore3.highlighted) {
+        [self.txtScore4 becomeFirstResponder];
+        [self.txtScore4 setHighlighted:YES];
+        [self.txtScore3 setHighlighted:NO];
+        return;
+    }
+    if (self.txtScore4.highlighted) {
+        [self.txtScore5 becomeFirstResponder];
+        [self.txtScore5 setHighlighted:YES];
+        [self.txtScore4 setHighlighted:NO];
+        return;
+    }
+    if (self.txtScore5.highlighted) {
+        [self.txtScore6 becomeFirstResponder];
+        [self.txtScore6 setHighlighted:YES];
+        [self.txtScore5 setHighlighted:NO];
+        return;
+    }
+    if (self.txtScore6.highlighted) {
+        [self.txtScore7 becomeFirstResponder];
+        [self.txtScore7 setHighlighted:YES];
+        [self.txtScore6 setHighlighted:NO];
+        return;
+    }
+    if (self.txtScore7.highlighted) {
+        [self.txtdd becomeFirstResponder];
+        [self.txtdd setHighlighted:YES];
+        [self.txtScore7 setHighlighted:NO];
+    }
+}
+
+- (IBAction)btnBack:(id)sender {
+    
+    if (self.txtdd.highlighted) {
+        
+        // we only want to erase if there is text, error otherwise
+        if (self.txtdd.text.length > 0) {
+            
+            NSString *tempString = self.txtdd.text;
+            NSString *newString = [tempString substringToIndex:[tempString length] -1];
+            self.txtdd.text = newString;
+        }
+    }
+    
+    if (self.txtScore1.highlighted) {
+        
+        // we only want to erase if there is text, error otherwise
+        if (self.txtScore1.text.length > 0) {
+            
+            NSString *tempString = self.txtScore1.text;
+            NSString *newString = [tempString substringToIndex:[tempString length] -1];
+            self.txtScore1.text = newString;
+        }
+    }
+    
+    if (self.txtScore2.highlighted) {
+        
+        // we only want to erase if there is text, error otherwise
+        if (self.txtScore2.text.length > 0) {
+            
+            NSString *tempString = self.txtScore2.text;
+            NSString *newString = [tempString substringToIndex:[tempString length] -1];
+            self.txtScore2.text = newString;
+        }
+    }
+    
+    if (self.txtScore3.highlighted) {
+        
+        // we only want to erase if there is text, error otherwise
+        if (self.txtScore3.text.length > 0) {
+            
+            NSString *tempString = self.txtScore3.text;
+            NSString *newString = [tempString substringToIndex:[tempString length] -1];
+            self.txtScore3.text = newString;
+        }
+    }
+    
+    if (self.txtScore4.highlighted) {
+        
+        // we only want to erase if there is text, error otherwise
+        if (self.txtScore4.text.length > 0) {
+            
+            NSString *tempString = self.txtScore4.text;
+            NSString *newString = [tempString substringToIndex:[tempString length] -1];
+            self.txtScore4.text = newString;
+        }
+    }
+    
+    if (self.txtScore5.highlighted) {
+        
+        // we only want to erase if there is text, error otherwise
+        if (self.txtScore5.text.length > 0) {
+            
+            NSString *tempString = self.txtScore5.text;
+            NSString *newString = [tempString substringToIndex:[tempString length] -1];
+            self.txtScore5.text = newString;
+        }
+    }
+    
+    if (self.txtScore6.highlighted) {
+        
+        // we only want to erase if there is text, error otherwise
+        if (self.txtScore6.text.length > 0) {
+            
+            NSString *tempString = self.txtScore6.text;
+            NSString *newString = [tempString substringToIndex:[tempString length] -1];
+            self.txtScore6.text = newString;
+        }
+    }
+    
+    if (self.txtScore7.highlighted) {
+        
+        // we only want to erase if there is text, error otherwise
+        if (self.txtScore7.text.length > 0) {
+            
+            NSString *tempString = self.txtScore7.text;
+            NSString *newString = [tempString substringToIndex:[tempString length] -1];
+            self.txtScore7.text = newString;
+        }
+    }
+}
+
+#pragma private methods
+
+-(NSNumber*)CalcScores {
+
+    
+    NSNumber *test;
+    
+    return test;
+}
+
+-(void)UpdateTxtField:(NSString*)digit {
+    
+    if (self.txtdd.highlighted) {
+        
+        // we'll just use this one since the dd uses different digits than the scores
+        NSString *tempString = self.txtdd.text;
+        NSRange range = NSRangeFromString([NSString stringWithFormat:@"{0:%d}", self.txtdd.text.length]);
+        NSString *newString = [self.txtdd.text stringByReplacingCharactersInRange:range withString:digit];
+        tempString = [tempString stringByAppendingString:newString];
+        //NSString *expression = @"^([0-9]|10{1}+)?(\\.([0|5]{1})?)?$";
+        NSString *expression = @"^([1-4]{1}+)?(\\.([0-9]{1})?)?$";
+        NSError *error = nil;
+        NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:expression options:NSRegularExpressionCaseInsensitive error:&error];
+        NSUInteger numberOfMatches = [regex numberOfMatchesInString:tempString options:0 range:NSMakeRange(0, [tempString length])];
+        if (numberOfMatches > 0) {
+        
+            self.txtdd.text = tempString;
+        }
+    }
+    
+    // the rest of these will just send the params and let one method do the regex work for all of them
+    if (self.txtScore1.highlighted) {
+        
+        NSString *tempString = self.txtScore1.text;
+        
+        self.txtScore1.text = [self CheckRegEx:digit textNumber:tempString];
+    }
+    
+    if (self.txtScore2.highlighted) {
+        
+        NSString *tempString = self.txtScore2.text;
+        
+        self.txtScore2.text = [self CheckRegEx:digit textNumber:tempString];
+    }
+    
+    if (self.txtScore3.highlighted) {
+        
+        NSString *tempString = self.txtScore3.text;
+        
+        self.txtScore3.text = [self CheckRegEx:digit textNumber:tempString];
+    }
+    
+    if (self.txtScore4.highlighted) {
+        
+        NSString *tempString = self.txtScore4.text;
+        
+        self.txtScore4.text = [self CheckRegEx:digit textNumber:tempString];
+    }
+    
+    if (self.txtScore5.highlighted) {
+        
+        NSString *tempString = self.txtScore5.text;
+        
+        self.txtScore5.text = [self CheckRegEx:digit textNumber:tempString];
+    }
+    
+    if (self.txtScore6.highlighted) {
+        
+        NSString *tempString = self.txtScore6.text;
+        
+        self.txtScore6.text = [self CheckRegEx:digit textNumber:tempString];
+    }
+    
+    if (self.txtScore7.highlighted) {
+        
+        NSString *tempString = self.txtScore7.text;
+    
+        self.txtScore7.text = [self CheckRegEx:digit textNumber:tempString];
+    }
+}
+
+-(NSString*)CheckRegEx:(NSString*)enteredNumber textNumber:(NSString*)textNumber {
+    
+    NSString *tempString = textNumber;
+    NSRange range = NSRangeFromString([NSString stringWithFormat:@"{0:%d}", textNumber.length]);
+    NSString *newString = [textNumber stringByReplacingCharactersInRange:range withString:enteredNumber];
+    tempString = [tempString stringByAppendingString:newString];
+    NSString *expression = @"^([0-9]|10{1}+)?(\\.([0|5]{1})?)?$";
+    NSError *error = nil;
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:expression options:NSRegularExpressionCaseInsensitive error:&error];
+    NSUInteger numberOfMatches = [regex numberOfMatchesInString:tempString options:0 range:NSMakeRange(0, [tempString length])];
+    if (numberOfMatches > 0) {
+        
+        return tempString;
+    }
+    
+    return @"";
+}
+
 @end

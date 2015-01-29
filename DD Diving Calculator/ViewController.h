@@ -24,6 +24,19 @@
 
 - (IBAction)btnClear:(id)sender;
 - (IBAction)btnTotal:(id)sender;
+- (IBAction)btnOne:(id)sender;
+- (IBAction)btnTwo:(id)sender;
+- (IBAction)btnThree:(id)sender;
+- (IBAction)btnFour:(id)sender;
+- (IBAction)btnFive:(id)sender;
+- (IBAction)btnSix:(id)sender;
+- (IBAction)btnSeven:(id)sender;
+- (IBAction)btnEight:(id)sender;
+- (IBAction)btnNine:(id)sender;
+- (IBAction)btnZero:(id)sender;
+- (IBAction)btnPeriod:(id)sender;
+- (IBAction)btnNext:(id)sender;
+- (IBAction)btnBack:(id)sender;
 
 @end
 
