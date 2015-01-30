@@ -27,7 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		267C7CAA1A78668B0059A0F0 /* DD Diving Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DD Diving Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		267C7CAA1A78668B0059A0F0 /* DD Diving Calc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DD Diving Calc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		267C7CAE1A78668B0059A0F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		267C7CAF1A78668B0059A0F0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		267C7CB11A78668B0059A0F0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -37,7 +37,7 @@
 		267C7CB81A78668B0059A0F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		267C7CBA1A78668B0059A0F0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		267C7CBD1A78668B0059A0F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		267C7CC31A78668B0059A0F0 /* DD Diving CalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DD Diving CalculatorTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		267C7CC31A78668B0059A0F0 /* DD Diving CalcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DD Diving CalcTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		267C7CC81A78668B0059A0F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		267C7CC91A78668B0059A0F0 /* DD_Diving_CalculatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DD_Diving_CalculatorTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,8 +72,8 @@
 		267C7CAB1A78668B0059A0F0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				267C7CAA1A78668B0059A0F0 /* DD Diving Calculator.app */,
-				267C7CC31A78668B0059A0F0 /* DD Diving CalculatorTests.xctest */,
+				267C7CAA1A78668B0059A0F0 /* DD Diving Calc.app */,
+				267C7CC31A78668B0059A0F0 /* DD Diving CalcTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -122,9 +122,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		267C7CA91A78668B0059A0F0 /* DD Diving Calculator */ = {
+		267C7CA91A78668B0059A0F0 /* DD Diving Calc */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 267C7CCD1A78668B0059A0F0 /* Build configuration list for PBXNativeTarget "DD Diving Calculator" */;
+			buildConfigurationList = 267C7CCD1A78668B0059A0F0 /* Build configuration list for PBXNativeTarget "DD Diving Calc" */;
 			buildPhases = (
 				267C7CA61A78668B0059A0F0 /* Sources */,
 				267C7CA71A78668B0059A0F0 /* Frameworks */,
@@ -134,14 +134,14 @@
 			);
 			dependencies = (
 			);
-			name = "DD Diving Calculator";
+			name = "DD Diving Calc";
 			productName = "DD Diving Calculator";
-			productReference = 267C7CAA1A78668B0059A0F0 /* DD Diving Calculator.app */;
+			productReference = 267C7CAA1A78668B0059A0F0 /* DD Diving Calc.app */;
 			productType = "com.apple.product-type.application";
 		};
-		267C7CC21A78668B0059A0F0 /* DD Diving CalculatorTests */ = {
+		267C7CC21A78668B0059A0F0 /* DD Diving CalcTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 267C7CD01A78668B0059A0F0 /* Build configuration list for PBXNativeTarget "DD Diving CalculatorTests" */;
+			buildConfigurationList = 267C7CD01A78668B0059A0F0 /* Build configuration list for PBXNativeTarget "DD Diving CalcTests" */;
 			buildPhases = (
 				267C7CBF1A78668B0059A0F0 /* Sources */,
 				267C7CC01A78668B0059A0F0 /* Frameworks */,
@@ -152,9 +152,9 @@
 			dependencies = (
 				267C7CC51A78668B0059A0F0 /* PBXTargetDependency */,
 			);
-			name = "DD Diving CalculatorTests";
+			name = "DD Diving CalcTests";
 			productName = "DD Diving CalculatorTests";
-			productReference = 267C7CC31A78668B0059A0F0 /* DD Diving CalculatorTests.xctest */;
+			productReference = 267C7CC31A78668B0059A0F0 /* DD Diving CalcTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -176,7 +176,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 267C7CA51A78668B0059A0F0 /* Build configuration list for PBXProject "DD Diving Calculator" */;
+			buildConfigurationList = 267C7CA51A78668B0059A0F0 /* Build configuration list for PBXProject "DD Diving Calc" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -189,8 +189,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				267C7CA91A78668B0059A0F0 /* DD Diving Calculator */,
-				267C7CC21A78668B0059A0F0 /* DD Diving CalculatorTests */,
+				267C7CA91A78668B0059A0F0 /* DD Diving Calc */,
+				267C7CC21A78668B0059A0F0 /* DD Diving CalcTests */,
 			);
 		};
 /* End PBXProject section */
@@ -239,7 +239,7 @@
 /* Begin PBXTargetDependency section */
 		267C7CC51A78668B0059A0F0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 267C7CA91A78668B0059A0F0 /* DD Diving Calculator */;
+			target = 267C7CA91A78668B0059A0F0 /* DD Diving Calc */;
 			targetProxy = 267C7CC41A78668B0059A0F0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -351,7 +351,7 @@
 				INFOPLIST_FILE = "DD Diving Calculator/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "DD Diving Calc";
 			};
 			name = Debug;
 		};
@@ -364,7 +364,7 @@
 				INFOPLIST_FILE = "DD Diving Calculator/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "DD Diving Calc";
 			};
 			name = Release;
 		};
@@ -382,7 +382,7 @@
 				);
 				INFOPLIST_FILE = "DD Diving CalculatorTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "DD Diving CalcTests";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DD Diving Calculator.app/DD Diving Calculator";
 			};
 			name = Debug;
@@ -397,7 +397,7 @@
 				);
 				INFOPLIST_FILE = "DD Diving CalculatorTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "DD Diving CalcTests";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DD Diving Calculator.app/DD Diving Calculator";
 			};
 			name = Release;
@@ -405,7 +405,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		267C7CA51A78668B0059A0F0 /* Build configuration list for PBXProject "DD Diving Calculator" */ = {
+		267C7CA51A78668B0059A0F0 /* Build configuration list for PBXProject "DD Diving Calc" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				267C7CCB1A78668B0059A0F0 /* Debug */,
@@ -414,21 +414,23 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		267C7CCD1A78668B0059A0F0 /* Build configuration list for PBXNativeTarget "DD Diving Calculator" */ = {
+		267C7CCD1A78668B0059A0F0 /* Build configuration list for PBXNativeTarget "DD Diving Calc" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				267C7CCE1A78668B0059A0F0 /* Debug */,
 				267C7CCF1A78668B0059A0F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		267C7CD01A78668B0059A0F0 /* Build configuration list for PBXNativeTarget "DD Diving CalculatorTests" */ = {
+		267C7CD01A78668B0059A0F0 /* Build configuration list for PBXNativeTarget "DD Diving CalcTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				267C7CD11A78668B0059A0F0 /* Debug */,
 				267C7CD21A78668B0059A0F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
