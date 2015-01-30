@@ -28,7 +28,7 @@
 @property (nonatomic) double score6;
 @property (nonatomic) double score7;
 
--(NSNumber*)CalcScores;
+-(NSString*)CalcScores;
 -(void)UpdateTxtField:(NSString*)digit;
 -(NSString*)CheckRegEx:(NSString*)enteredNumber textNumber:(NSString*)textNumber;
 -(NSString*)DeleteText:(NSString*)textfield;
@@ -240,7 +240,7 @@
     
     if (self.txtdd.text.length > 0) {
         
-        self.lblTotal.text = [[self CalcScores] stringValue];
+        self.lblTotal.text = [self CalcScores];
         
     } else {
         UIAlertView *error = [[UIAlertView alloc] initWithTitle:@"Hold On!"
@@ -429,7 +429,7 @@
 
 #pragma private methods
 
--(NSNumber*)CalcScores {
+-(NSString*)CalcScores {
     
     // create a mutable array
     NSMutableArray *scores = [[NSMutableArray alloc] init];
@@ -528,7 +528,14 @@
     
     NSNumber *theNumber = [NSNumber numberWithDouble:finalScore];
     
-    return theNumber;
+    NSNumberFormatter *fm = [[NSNumberFormatter alloc] init];
+    [fm setNumberStyle:NSNumberFormatterDecimalStyle];
+    [fm setMaximumFractionDigits:2];
+    //[fm setRoundingMode:NSNumberFormatterRoundUp];
+    
+    NSString *numberString = [fm stringFromNumber:theNumber];
+    
+    return numberString;
 }
 
 -(NSString*)DeleteText:(NSString*)textfield {
@@ -556,6 +563,13 @@
         
             self.txtdd.text = tempString;
         }
+        
+        if (self.txtdd.text.length == 3) {
+            [self.txtScore1 becomeFirstResponder];
+            [self.txtScore1 setHighlighted:YES];
+            [self.txtdd setHighlighted:NO];
+            return;
+        }
     }
     
     // the rest of these will just send the params and let one method do the regex work for all of them
@@ -568,6 +582,13 @@
         if (test.length > 0) {
             self.txtScore1.text = test;
         }
+        
+        if (self.txtScore1.text.length == 3 || [self.txtScore1.text isEqualToString:@"10"]) {
+            [self.txtScore2 becomeFirstResponder];
+            [self.txtScore2 setHighlighted:YES];
+            [self.txtScore1 setHighlighted:NO];
+            return;
+        }
     }
     
     if (self.txtScore2.highlighted) {
@@ -578,6 +599,13 @@
         
         if (test.length > 0) {
             self.txtScore2.text = test;
+        }
+        
+        if (self.txtScore2.text.length == 3 || [self.txtScore2.text isEqualToString:@"10"]) {
+            [self.txtScore3 becomeFirstResponder];
+            [self.txtScore3 setHighlighted:YES];
+            [self.txtScore2 setHighlighted:NO];
+            return;
         }
     }
     
@@ -590,6 +618,13 @@
         if (test.length > 0) {
             self.txtScore3.text = test;
         }
+        
+        if (self.txtScore3.text.length == 3 || [self.txtScore3.text isEqualToString:@"10"]) {
+            [self.txtScore4 becomeFirstResponder];
+            [self.txtScore4 setHighlighted:YES];
+            [self.txtScore3 setHighlighted:NO];
+            return;
+        }
     }
     
     if (self.txtScore4.highlighted) {
@@ -600,6 +635,13 @@
         
         if (test.length > 0) {
             self.txtScore4.text = test;
+        }
+        
+        if (self.txtScore4.text.length == 3 || [self.txtScore4.text isEqualToString:@"10"]) {
+            [self.txtScore5 becomeFirstResponder];
+            [self.txtScore5 setHighlighted:YES];
+            [self.txtScore4 setHighlighted:NO];
+            return;
         }
     }
     
@@ -612,6 +654,13 @@
         if (test.length > 0) {
             self.txtScore5.text = test;
         }
+        
+        if (self.txtScore5.text.length == 3 || [self.txtScore5.text isEqualToString:@"10"]) {
+            [self.txtScore6 becomeFirstResponder];
+            [self.txtScore6 setHighlighted:YES];
+            [self.txtScore5 setHighlighted:NO];
+            return;
+        }
     }
     
     if (self.txtScore6.highlighted) {
@@ -623,6 +672,13 @@
         if (test.length > 0) {
             self.txtScore6.text = test;
         }
+        
+        if (self.txtScore6.text.length == 3 || [self.txtScore6.text isEqualToString:@"10"]) {
+            [self.txtScore7 becomeFirstResponder];
+            [self.txtScore7 setHighlighted:YES];
+            [self.txtScore6 setHighlighted:NO];
+            return;
+        }
     }
     
     if (self.txtScore7.highlighted) {
@@ -633,6 +689,13 @@
         
         if (test.length > 0) {
             self.txtScore7.text = test;
+        }
+        
+        if (self.txtScore7.text.length == 3 || [self.txtScore7.text isEqualToString:@"10"]) {
+            [self.txtdd becomeFirstResponder];
+            [self.txtdd setHighlighted:YES];
+            [self.txtScore7 setHighlighted:NO];
+            return;
         }
     }
 }
