@@ -32,6 +32,7 @@
 -(void)UpdateTxtField:(NSString*)digit;
 -(NSString*)CheckRegEx:(NSString*)enteredNumber textNumber:(NSString*)textNumber;
 -(NSString*)DeleteText:(NSString*)textfield;
+-(void)removeTextToolbar:(UITextInputAssistantItem*)textField;
 
 @end
 
@@ -69,6 +70,15 @@
     self.txtScore5.inputView = dummyView;
     self.txtScore6.inputView = dummyView;
     self.txtScore7.inputView = dummyView;
+    
+    [self removeTextToolbar:[self.txtdd inputAssistantItem]];
+    [self removeTextToolbar:[self.txtScore1 inputAssistantItem]];
+    [self removeTextToolbar:[self.txtScore2 inputAssistantItem]];
+    [self removeTextToolbar:[self.txtScore3 inputAssistantItem]];
+    [self removeTextToolbar:[self.txtScore4 inputAssistantItem]];
+    [self removeTextToolbar:[self.txtScore5 inputAssistantItem]];
+    [self removeTextToolbar:[self.txtScore6 inputAssistantItem]];
+    [self removeTextToolbar:[self.txtScore7 inputAssistantItem]];
     
     [self.txtdd becomeFirstResponder];
     [self.txtdd setHighlighted:YES];
@@ -717,6 +727,11 @@
     }
     
     return @"";
+}
+
+-(void)removeTextToolbar:(UITextInputAssistantItem*)textField {
+    textField.leadingBarButtonGroups = @[];
+    textField.trailingBarButtonGroups = @[];
 }
 
 @end
