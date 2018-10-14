@@ -253,12 +253,22 @@
         self.lblTotal.text = [self CalcScores];
         
     } else {
-        UIAlertView *error = [[UIAlertView alloc] initWithTitle:@"Hold On!"
-                                                        message:@"Please enter a Dive DD"
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [error show];
+        UIAlertController *error = [UIAlertController
+                                    alertControllerWithTitle:@"Hold On"
+                                    message:@"Please enter a Dive DD"
+                                    preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *okAction = [UIAlertAction
+                                actionWithTitle:@"OK"
+                                style:UIAlertActionStyleDefault
+                                handler:^(UIAlertAction *action)
+                                {
+                                    NSLog(@"Ok Action");
+                                }];
+        
+        [error addAction:okAction];
+        
+        [self presentViewController:error animated:YES completion:nil];
         [error reloadInputViews];
     }
 }
@@ -515,23 +525,43 @@
             finalScore = (self.score1 + self.score2 + self.score3) * self.dd;
             
         } else {
-            UIAlertView *error = [[UIAlertView alloc] initWithTitle:@"Hold On!"
-                                                            message:@"You have to enter either 2, 3, 5, or 7 scores"
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"OK"
-                                                  otherButtonTitles:nil];
-            [error show];
+            UIAlertController *error = [UIAlertController
+                                        alertControllerWithTitle:@"Hold On"
+                                        message:@"You have to enter either 2, 3, 5, or 7 scores"
+                                        preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction *okAction = [UIAlertAction
+                                       actionWithTitle:@"OK"
+                                       style:UIAlertActionStyleDefault
+                                       handler:^(UIAlertAction *action)
+                                       {
+                                           NSLog(@"Ok Action");
+                                       }];
+            
+            [error addAction:okAction];
+            
+            [self presentViewController:error animated:YES completion:nil];
             [error reloadInputViews];
         }
     
         
     } else {
-        UIAlertView *error = [[UIAlertView alloc] initWithTitle:@"Hold On!"
-                                                        message:@"You didn't enter enough scores"
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [error show];
+        UIAlertController *error = [UIAlertController
+                                    alertControllerWithTitle:@"Hold On"
+                                    message:@"You didn't enter enough scores"
+                                    preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *okAction = [UIAlertAction
+                                   actionWithTitle:@"OK"
+                                   style:UIAlertActionStyleDefault
+                                   handler:^(UIAlertAction *action)
+                                   {
+                                       NSLog(@"Ok Action");
+                                   }];
+        
+        [error addAction:okAction];
+        
+        [self presentViewController:error animated:YES completion:nil];
         [error reloadInputViews];
 
     }

@@ -14,6 +14,7 @@
 		267C7CBB1A78668B0059A0F0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 267C7CBA1A78668B0059A0F0 /* Images.xcassets */; };
 		267C7CBE1A78668B0059A0F0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 267C7CBC1A78668B0059A0F0 /* LaunchScreen.xib */; };
 		267C7CCA1A78668B0059A0F0 /* DD_Diving_CalculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 267C7CC91A78668B0059A0F0 /* DD_Diving_CalculatorTests.m */; };
+		26E73F6E2173E322001A0E9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26E73F6D2173E322001A0E9B /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		267C7CC31A78668B0059A0F0 /* DD Diving CalculatorulatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DD Diving CalculatorulatorTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		267C7CC81A78668B0059A0F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		267C7CC91A78668B0059A0F0 /* DD_Diving_CalculatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DD_Diving_CalculatorTests.m; sourceTree = "<group>"; };
+		26E73F6D2173E322001A0E9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../../Dropbox/2018_IOS/Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 		267C7CAC1A78668B0059A0F0 /* DD Diving Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				26E73F6D2173E322001A0E9B /* Assets.xcassets */,
 				267C7CB11A78668B0059A0F0 /* AppDelegate.h */,
 				267C7CB21A78668B0059A0F0 /* AppDelegate.m */,
 				267C7CB41A78668B0059A0F0 /* ViewController.h */,
@@ -163,7 +166,7 @@
 		267C7CA21A78668B0059A0F0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "SingleCog Software";
 				TargetAttributes = {
 					267C7CA91A78668B0059A0F0 = {
@@ -203,6 +206,7 @@
 			files = (
 				267C7CB91A78668B0059A0F0 /* Main.storyboard in Resources */,
 				267C7CBE1A78668B0059A0F0 /* LaunchScreen.xib in Resources */,
+				26E73F6E2173E322001A0E9B /* Assets.xcassets in Resources */,
 				267C7CBB1A78668B0059A0F0 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,12 +281,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -309,7 +315,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -329,12 +335,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -354,7 +362,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -370,7 +378,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 5LME3793K2;
 				INFOPLIST_FILE = "DD Diving Calculator/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.singlecog.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "DD Diving Calc";
@@ -385,7 +393,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 5LME3793K2;
 				INFOPLIST_FILE = "DD Diving Calculator/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.singlecog.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "DD Diving Calc";
