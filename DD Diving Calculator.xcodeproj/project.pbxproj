@@ -12,7 +12,6 @@
 		267C7CB61A78668B0059A0F0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 267C7CB51A78668B0059A0F0 /* ViewController.m */; };
 		267C7CB91A78668B0059A0F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 267C7CB71A78668B0059A0F0 /* Main.storyboard */; };
 		267C7CBB1A78668B0059A0F0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 267C7CBA1A78668B0059A0F0 /* Images.xcassets */; };
-		267C7CBE1A78668B0059A0F0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 267C7CBC1A78668B0059A0F0 /* LaunchScreen.xib */; };
 		267C7CCA1A78668B0059A0F0 /* DD_Diving_CalculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 267C7CC91A78668B0059A0F0 /* DD_Diving_CalculatorTests.m */; };
 		26E73F6E2173E322001A0E9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26E73F6D2173E322001A0E9B /* Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -37,7 +36,6 @@
 		267C7CB51A78668B0059A0F0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		267C7CB81A78668B0059A0F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		267C7CBA1A78668B0059A0F0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		267C7CBD1A78668B0059A0F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		267C7CC31A78668B0059A0F0 /* DD Diving CalculatorulatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DD Diving CalculatorulatorTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		267C7CC81A78668B0059A0F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		267C7CC91A78668B0059A0F0 /* DD_Diving_CalculatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DD_Diving_CalculatorTests.m; sourceTree = "<group>"; };
@@ -90,7 +88,6 @@
 				267C7CB51A78668B0059A0F0 /* ViewController.m */,
 				267C7CB71A78668B0059A0F0 /* Main.storyboard */,
 				267C7CBA1A78668B0059A0F0 /* Images.xcassets */,
-				267C7CBC1A78668B0059A0F0 /* LaunchScreen.xib */,
 				267C7CAD1A78668B0059A0F0 /* Supporting Files */,
 			);
 			path = "DD Diving Calculator";
@@ -205,7 +202,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				267C7CB91A78668B0059A0F0 /* Main.storyboard in Resources */,
-				267C7CBE1A78668B0059A0F0 /* LaunchScreen.xib in Resources */,
 				26E73F6E2173E322001A0E9B /* Assets.xcassets in Resources */,
 				267C7CBB1A78668B0059A0F0 /* Images.xcassets in Resources */,
 			);
@@ -256,14 +252,6 @@
 				267C7CB81A78668B0059A0F0 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		267C7CBC1A78668B0059A0F0 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				267C7CBD1A78668B0059A0F0 /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
