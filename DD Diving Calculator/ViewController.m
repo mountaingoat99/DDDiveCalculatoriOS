@@ -330,49 +330,49 @@
 
 - (IBAction)btnNext:(id)sender {
     
-    if (self.txtdd.highlighted) {
+    if (self.txtdd.editing) {
         [self.txtScore1 becomeFirstResponder];
         [self.txtScore1 setHighlighted:YES];
         [self.txtdd setHighlighted:NO];
         return;
     }
-    if (self.txtScore1.highlighted) {
+    if (self.txtScore1.editing) {
         [self.txtScore2 becomeFirstResponder];
         [self.txtScore2 setHighlighted:YES];
         [self.txtScore1 setHighlighted:NO];
         return;
     }
-    if (self.txtScore2.highlighted) {
+    if (self.txtScore2.editing) {
         [self.txtScore3 becomeFirstResponder];
         [self.txtScore3 setHighlighted:YES];
         [self.txtScore2 setHighlighted:NO];
         return;
     }
-    if (self.txtScore3.highlighted) {
+    if (self.txtScore3.editing) {
         [self.txtScore4 becomeFirstResponder];
         [self.txtScore4 setHighlighted:YES];
         [self.txtScore3 setHighlighted:NO];
         return;
     }
-    if (self.txtScore4.highlighted) {
+    if (self.txtScore4.editing) {
         [self.txtScore5 becomeFirstResponder];
         [self.txtScore5 setHighlighted:YES];
         [self.txtScore4 setHighlighted:NO];
         return;
     }
-    if (self.txtScore5.highlighted) {
+    if (self.txtScore5.editing) {
         [self.txtScore6 becomeFirstResponder];
         [self.txtScore6 setHighlighted:YES];
         [self.txtScore5 setHighlighted:NO];
         return;
     }
-    if (self.txtScore6.highlighted) {
+    if (self.txtScore6.editing) {
         [self.txtScore7 becomeFirstResponder];
         [self.txtScore7 setHighlighted:YES];
         [self.txtScore6 setHighlighted:NO];
         return;
     }
-    if (self.txtScore7.highlighted) {
+    if (self.txtScore7.editing) {
         [self.txtdd becomeFirstResponder];
         [self.txtdd setHighlighted:YES];
         [self.txtScore7 setHighlighted:NO];
@@ -381,7 +381,7 @@
 
 - (IBAction)btnBack:(id)sender {
     
-    if (self.txtdd.highlighted) {
+    if (self.txtdd.editing) {
         
         // we only want to erase if there is text, error otherwise
         if (self.txtdd.text.length > 0) {
@@ -390,59 +390,87 @@
         }
     }
     
-    if (self.txtScore1.highlighted) {
+    if (self.txtScore1.editing) {
         
         if (self.txtScore1.text.length > 0) {
             
             self.txtScore1.text = [self DeleteText:self.txtScore1.text];
+        } else {
+            [self.txtdd becomeFirstResponder];
+            [self.txtdd setHighlighted:YES];
+            [self.txtScore1 setHighlighted:NO];
         }
     }
     
-    if (self.txtScore2.highlighted) {
+    if (self.txtScore2.editing) {
         
         if (self.txtScore2.text.length > 0) {
             
             self.txtScore2.text = [self DeleteText:self.txtScore2.text];
+        } else {
+            [self.txtScore1 becomeFirstResponder];
+            [self.txtScore1 setHighlighted:YES];
+            [self.txtScore2 setHighlighted:NO];
         }
     }
     
-    if (self.txtScore3.highlighted) {
+    if (self.txtScore3.editing) {
         
         if (self.txtScore3.text.length > 0) {
             
             self.txtScore3.text = [self DeleteText:self.txtScore3.text];
+        } else {
+            [self.txtScore2 becomeFirstResponder];
+            [self.txtScore2 setHighlighted:YES];
+            [self.txtScore3 setHighlighted:NO];
         }
     }
     
-    if (self.txtScore4.highlighted) {
+    if (self.txtScore4.editing) {
         
         if (self.txtScore4.text.length > 0) {
             
             self.txtScore4.text = [self DeleteText:self.txtScore4.text];
+        } else {
+            [self.txtScore3 becomeFirstResponder];
+            [self.txtScore3 setHighlighted:YES];
+            [self.txtScore4 setHighlighted:NO];
         }
     }
     
-    if (self.txtScore5.highlighted) {
+    if (self.txtScore5.editing) {
         
         if (self.txtScore5.text.length > 0) {
             
             self.txtScore5.text = [self DeleteText:self.txtScore5.text];
+        } else {
+            [self.txtScore4 becomeFirstResponder];
+            [self.txtScore4 setHighlighted:YES];
+            [self.txtScore5 setHighlighted:NO];
         }
     }
     
-    if (self.txtScore6.highlighted) {
+    if (self.txtScore6.editing) {
         
         if (self.txtScore6.text.length > 0) {
             
             self.txtScore6.text = [self DeleteText:self.txtScore6.text];
+        } else {
+            [self.txtScore5 becomeFirstResponder];
+            [self.txtScore5 setHighlighted:YES];
+            [self.txtScore6 setHighlighted:NO];
         }
     }
     
-    if (self.txtScore7.highlighted) {
+    if (self.txtScore7.editing) {
         
         if (self.txtScore7.text.length > 0) {
             
             self.txtScore7.text = [self DeleteText:self.txtScore7.text];
+        } else {
+            [self.txtScore6 becomeFirstResponder];
+            [self.txtScore6 setHighlighted:YES];
+            [self.txtScore7 setHighlighted:NO];
         }
     }
 }
@@ -587,7 +615,7 @@
 
 -(void)UpdateTxtField:(NSString*)digit {
     
-    if (self.txtdd.highlighted) {
+    if (self.txtdd.editing) {
         
         // we'll just use this one since the dd uses different digits than the scores
         NSString *tempString = self.txtdd.text;
@@ -613,7 +641,7 @@
     }
     
     // the rest of these will just send the params and let one method do the regex work for all of them
-    if (self.txtScore1.highlighted) {
+    if (self.txtScore1.editing) {
         
         NSString *tempString = self.txtScore1.text;
         
@@ -631,7 +659,7 @@
         }
     }
     
-    if (self.txtScore2.highlighted) {
+    if (self.txtScore2.editing) {
         
         NSString *tempString = self.txtScore2.text;
         
@@ -649,7 +677,7 @@
         }
     }
     
-    if (self.txtScore3.highlighted) {
+    if (self.txtScore3.editing) {
         
         NSString *tempString = self.txtScore3.text;
         
@@ -667,7 +695,7 @@
         }
     }
     
-    if (self.txtScore4.highlighted) {
+    if (self.txtScore4.editing) {
         
         NSString *tempString = self.txtScore4.text;
         
@@ -685,7 +713,7 @@
         }
     }
     
-    if (self.txtScore5.highlighted) {
+    if (self.txtScore5.editing) {
         
         NSString *tempString = self.txtScore5.text;
         
@@ -703,7 +731,7 @@
         }
     }
     
-    if (self.txtScore6.highlighted) {
+    if (self.txtScore6.editing) {
         
         NSString *tempString = self.txtScore6.text;
         
@@ -721,7 +749,7 @@
         }
     }
     
-    if (self.txtScore7.highlighted) {
+    if (self.txtScore7.editing) {
         
         NSString *tempString = self.txtScore7.text;
         
